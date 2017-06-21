@@ -10,7 +10,7 @@ install.packages("car") #The car package must be installed first
 devtools::install_github("SharonLutz/software/Umediation")
 ```
 #### Example
-For the given dataset, one can test... The code below runs this analysis.
+Below, we simulate 4 unmeasured confounders U (2 normally distributed and 2 Bernouilli distributed random variables) on the binary exposure, A, normally distributed mediator, M, and normally distributed out Y adjusted for one normally distributed covariate and 2 binary distributed covariate.
 ```
 library(Umediation)
 ?Umediation # For details on this function and how to choose input variables
@@ -25,7 +25,7 @@ testM
 ```
 
 #### Output
-For this analysis we have the following output and we can see that ...
+For this analysis, we can see that there is nor a significant difference in the proportion of simulations for the mediated effect if the unmeasured confounders are included, but there is a large diffence in the inference for the direct effect if these unmeasured confounders are not included in the analysis.
 
 ```
 $Results
