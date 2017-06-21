@@ -1,0 +1,10 @@
+\name{Umediation-package}
+\alias{Umediation-package}
+\alias{Umediation-pkg}
+\docType{package}
+\title{
+\packageTitle{Umediation}
+}
+\description{
+\packageDescription{Umediation}
+}
