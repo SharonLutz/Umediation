@@ -7,7 +7,7 @@ install.packages("devtools") #The devtools package must be installed first
 install.packages("mediation") #The mediation package must be installed first
 install.packages("car") #The car package must be installed first
 
-devtools::install_github("SharonLutz/Umediation")
+devtools::install_github("SharonLutz/Umediation/Umediation")
 ```
 #### Example
 Below, we simulate 4 unmeasured confounders U (2 normally distributed and 2 Bernouilli distributed random variables) on the binary exposure, A, normally distributed mediator, M, and normally distributed out Y adjusted for one normally distributed covariate and 2 binary distributed covariate.
