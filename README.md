@@ -62,6 +62,6 @@ $Warning
 ```
 
 #### Reference
-Lutz SM, Thwing A, Schmiege S, Kroehl M, Baker C, Starling A, Hokanon JE, Ghosh D. (2017) Examining the Role of Unmeasured Confounding in Mediation Analysis with Genetic and Genomic Applications. (Submitted)
+Lutz SM, Thwing A, Schmiege S, Kroehl M, Baker C, Starling A, Hokanson JE, Ghosh D. (2017) Examining the Role of Unmeasured Confounding in Mediation Analysis with Genetic and Genomic Applications. (Submitted)
 
 
