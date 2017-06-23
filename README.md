@@ -10,7 +10,7 @@ install.packages("car") #The car package must be installed first
 devtools::install_github("SharonLutz/Umediation")
 ```
 #### Example
-Below, we simulate 4 unmeasured confounders U (2 normally distributed and 2 Bernouilli distributed random variables) on the binary exposure, A, normally distributed mediator, M, and normally distributed out Y adjusted for one normally distributed covariate and 2 binary distributed covariate.
+Below, we simulate 4 unmeasured confounders U (2 normally distributed and 2 Bernouilli distributed random variables) on the binary exposure, A, normally distributed mediator, M, and normally distributed outcome Y adjusted for one normally distributed covariate and 2 binary distributed covariates.
 ```
 library(Umediation)
 ?Umediation # For details on this function and how to choose input variables
@@ -62,6 +62,6 @@ $Warning
 ```
 
 #### Reference
-Lutz SM, Thwing A, Schmiege S, Kroehl M, Baker C, Starling A, Hokanson JE, Ghosh D. (2017) Examining the Role of Unmeasured Confounding in Mediation Analysis with Genetic and Genomic Applications. (Submitted)
+Lutz SM, Thwing A, Schmiege S, Kroehl M, Baker CD, Starling AP, Hokanson JE, Ghosh D. (2017) Examining the Role of Unmeasured Confounding in Mediation Analysis with Genetic and Genomic Applications. (Submitted)
 
 
