@@ -1,7 +1,7 @@
 # Umediation
 The Umediation R package enables the user to simulate unmeasured confounding in mediation analysis in order to see how the results of the mediation analysis would change in the presence of unmeasured confounding.
 
-#### Installation
+### Installation
 ```
 install.packages("devtools") #The devtools package must be installed first
 install.packages("mediation") #The mediation package must be installed first
@@ -9,7 +9,7 @@ install.packages("car") #The car package must be installed first
 
 devtools::install_github("SharonLutz/Umediation")
 ```
-#### Example
+### Example
 Below, we simulate 4 unmeasured confounders U (2 normally distributed and 2 Bernouilli distributed random variables) on the binary exposure, A, normally distributed mediator, M, and normally distributed outcome Y adjusted for one normally distributed covariate and 2 binary distributed covariates.
 ```
 library(Umediation)
@@ -24,7 +24,7 @@ testM
 
 ```
 
-#### Output
+### Output
 For this analysis, we can see that there is not a significant difference in the proportion of simulations for the mediated effect if the unmeasured confounders are included, but there is a large diffence in the inference for the direct effect if these unmeasured confounders are not included in the analysis.
 
 ```
@@ -61,5 +61,5 @@ $Warning
 
 ```
 
-#### Reference
+### Reference
 **Lutz SM**, Thwing A, Schmiege S, Kroehl M, Baker CD, Starling AP, Hokanson JE, Ghosh D. (2017) Examining the Role of Unmeasured Confounding in Mediation Analysis with Genetic and Genomic Applications. *BMC Bioinformatics.* 18(1):344.
