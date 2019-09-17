@@ -61,6 +61,11 @@ $Warning
 
 ```
 
+## Speed Improvements using C++ Bindings and Threading
+There is another version of this package which implements support for threading and a version of the mediation algorithm implemented using RcppEigen which can provide a significant boost in speed akin to multiprocessing but with less of a memory footprint.
+
+Find it here [UmediationThread](https://github.com/SharonLutz/UmediationThread)
+
 ## Reference
 **Lutz SM**, Thwing A, Schmiege S, Kroehl M, Baker CD, Starling AP, Hokanson JE, Ghosh D. (2017) Examining the Role of Unmeasured Confounding in Mediation Analysis with Genetic and Genomic Applications. *BMC Bioinformatics.* 18(1):344.
 
