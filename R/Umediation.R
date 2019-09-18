@@ -74,41 +74,39 @@ Umediation<-function(
     
     # TODO access the med.out/ med.outU values for this simulation
     result_element = result.matrix[[si]]
-    print(paste(is.null(result_element)))
-    print(names(result_element))
     
     med.out = result_element[["med.out"]]
     med.outU = result_element[["med.outU"]]
     
-    print(is.null(med.out))
-    print(names(med.out))
-    print(is.null(med.outU))
-    print(names(med.outU))
-    
     med.summary = summary(med.out)
     medU.summary = summary(med.outU)
     
-    print(is.null(med.summary))
-    print(names(med.summary))
-    print(is.null(medU.summary))
-    print(names(medU.summary))
+    med.d.avg = med.summary[["d.avg"]]
+    med.z.avg = med.summary[["z.avg"]]
+    med.d.avg.p = med.summary[["d.avg.p"]]
+    med.z.avg.p = med.summary[["z.avg.p"]]
+    
+    medU.d.avg = medU.summary[["d.avg"]]
+    medU.z.avg = medU.summary[["z.avg"]]
+    medU.d.avg.p = medU.summary[["d.avg.p"]]
+    medU.z.avg.p = medU.summary[["z.avg.p"]]
     
     #Results
-    Results["Average ACME excluding U",1]<-Results["Average ACME excluding U",1]+summary(med.out)$d.avg
-    Results["Average ACME including U",1]<-Results["Average ACME including U",1]+summary(med.outU)$d.avg
-    Results["Average absolute difference of ACME including U minus ACME excluding U",1]<-Results["Average absolute difference of ACME including U minus ACME excluding U",1]+abs(summary(med.out)$d.avg-summary(med.outU)$d.avg)
+    Results["Average ACME excluding U",1]<-Results["Average ACME excluding U",1]+med.d.avg
+    Results["Average ACME including U",1]<-Results["Average ACME including U",1]+medU.d.avg
+    Results["Average absolute difference of ACME including U minus ACME excluding U",1]<-Results["Average absolute difference of ACME including U minus ACME excluding U",1]+abs(med.d.avg-medU.d.avg)
     
-    Results["Average ADE excluding U",1]<-Results["Average ADE excluding U",1]+summary(med.out)$z.avg
-    Results["Average ADE including U",1]<-Results["Average ADE including U",1]+summary(med.outU)$z.avg
-    Results["Average absolute difference of ADE including U minus ADE excluding U",1]<-Results["Average absolute difference of ADE including U minus ADE excluding U",1]+abs(summary(med.out)$z.avg-summary(med.outU)$z.avg)
+    Results["Average ADE excluding U",1]<-Results["Average ADE excluding U",1]+med.z.avg
+    Results["Average ADE including U",1]<-Results["Average ADE including U",1]+medU.z.avg
+    Results["Average absolute difference of ADE including U minus ADE excluding U",1]<-Results["Average absolute difference of ADE including U minus ADE excluding U",1]+abs(med.z.avg-medU.z.avg)
     
-    if(summary(med.out)$d.avg.p<alpha){Results["Prop. of simulations w/ significant ACME excluding U",1]<- Results["Prop. of simulations w/ significant ACME excluding U",1]+1}
-    if(summary(med.outU)$d.avg.p<alpha){Results["Prop. of simulations w/ significant ACME including U",1]<- Results["Prop. of simulations w/ significant ACME including U",1]+1}
-    if(((summary(med.out)$d.avg.p<alpha)&(summary(med.outU)$d.avg.p<alpha))|((summary(med.out)$d.avg.p>alpha)&(summary(med.outU)$d.avg.p>alpha))){Results["Prop. of simulations where conclusions based on ACME match",1]<- Results["Prop. of simulations where conclusions based on ACME match",1]+1}
+    if(med.d.avg.p<alpha){Results["Prop. of simulations w/ significant ACME excluding U",1]<- Results["Prop. of simulations w/ significant ACME excluding U",1]+1}
+    if(medU.d.avg.p<alpha){Results["Prop. of simulations w/ significant ACME including U",1]<- Results["Prop. of simulations w/ significant ACME including U",1]+1}
+    if(((med.d.avg.p<alpha)&(medU.d.avg.p<alpha))|((med.d.avg.p>alpha)&(medU.d.avg.p>alpha))){Results["Prop. of simulations where conclusions based on ACME match",1]<- Results["Prop. of simulations where conclusions based on ACME match",1]+1}
     
-    if(summary(med.out)$z.avg.p<alpha){Results["Prop. of simulations w/ significant ADE excluding U",1]<- Results["Prop. of simulations w/ significant ADE excluding U",1]+1}
-    if(summary(med.outU)$z.avg.p<alpha){Results["Prop. of simulations w/ significant ADE including U",1]<- Results["Prop. of simulations w/ significant ADE including U",1]+1}
-    if(((summary(med.out)$z.avg.p<alpha)&(summary(med.outU)$z.avg.p<alpha))|((summary(med.out)$z.avg.p>alpha)&(summary(med.outU)$z.avg.p>alpha))){Results["Prop. of simulations where conclusions based on ADE match",1]<- Results["Prop. of simulations where conclusions based on ADE match",1]+1}
+    if(med.z.avg.p<alpha){Results["Prop. of simulations w/ significant ADE excluding U",1]<- Results["Prop. of simulations w/ significant ADE excluding U",1]+1}
+    if(medU.z.avg.p<alpha){Results["Prop. of simulations w/ significant ADE including U",1]<- Results["Prop. of simulations w/ significant ADE including U",1]+1}
+    if(((med.z.avg.p<alpha)&(medU.z.avg.p<alpha))|((med.z.avg.p>alpha)&(medU.z.avg.p>alpha))){Results["Prop. of simulations where conclusions based on ADE match",1]<- Results["Prop. of simulations where conclusions based on ADE match",1]+1}
     
   }
   
