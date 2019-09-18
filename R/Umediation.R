@@ -30,7 +30,7 @@ Umediation<-function(
   #######################################
   # Create Input Data Matrix
   #######################################
-  
+  cat("generating data matrix\n")
   data_matrix_gen = generate_data_matrix(
     n=n, interact=interact,
     Atype=Atype,Mtype=Mtype,Ytype=Ytype,Ctype=Ctype,Utype=Utype,
@@ -44,7 +44,7 @@ Umediation<-function(
   #######################################
   # Run the mediation and collect the results
   #######################################
-  
+  cat("Running Simulation\n")
   if(use_multi_processing){
     options(mediate.jobs = num_jobs)
     if(parallel::detectCores() == 1){
@@ -69,7 +69,7 @@ Umediation<-function(
   #######################################
   # Loop through the mediation result matrix
   #######################################
-  
+  cat("Processing Results\n")
   for(si in 1:nSim){ #loop through all simulations
     
     # TODO access the med.out/ med.outU values for this simulation
