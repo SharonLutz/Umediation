@@ -74,6 +74,9 @@ Umediation<-function(
     
     # TODO access the med.out/ med.outU values for this simulation
     result_element = result.matrix[[si]]
+    
+    print(paste(is.null(result_element),names(result_element)))
+    
     med.out = result_element$med.out
     med.outU = result_element$med.outU
     
