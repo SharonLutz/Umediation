@@ -8,7 +8,9 @@ generate_data_matrix <- function(
   nSim=250,seed=1,nBoot=400){
   
   data_matrix = list()
+  
   matC = vector(mode="numeric")
+  
   for(si in 1:nSim){ #loop through all simulations
     set.seed(seed+(si-1)) #set the seed to ensure reproducibility
     
