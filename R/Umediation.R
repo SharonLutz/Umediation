@@ -78,8 +78,8 @@ Umediation<-function(
     med.out = result_element[["med.out"]]
     med.outU = result_element[["med.outU"]]
     
-    med.summary = summary(med.out)
-    medU.summary = summary(med.outU)
+    med.summary = mediation::summary.mediate(med.out)
+    medU.summary = mediation::summary.mediate(med.outU)
     
     med.d.avg = med.summary[["d.avg"]]
     med.z.avg = med.summary[["z.avg"]]
