@@ -85,6 +85,14 @@ Umediation<-function(
     print(is.null(med.outU))
     print(names(med.outU))
     
+    med.summary = summary(med.out)
+    medU.summary = summary(med.outU)
+    
+    print(is.null(med.summary))
+    print(names(med.summary))
+    print(is.null(medU.summary))
+    print(names(medU.summary))
+    
     #Results
     Results["Average ACME excluding U",1]<-Results["Average ACME excluding U",1]+summary(med.out)$d.avg
     Results["Average ACME including U",1]<-Results["Average ACME including U",1]+summary(med.outU)$d.avg
