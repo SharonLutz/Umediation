@@ -6,7 +6,12 @@ Umediation<-function(
   beta0=0,betaA=0,betaM=0,betaI=0,betaC=0,betaU=0,varY=1,
   alpha=0.05,nSim=250,nBoot=400,seed=1,atreat=1,acontrol=0,
   use_multi_processing=F, num_jobs=1){
-    
+  if(num_Jobs < 1){
+    stop("invalid parameter: num_jobs < 1")
+  }
+  if(num_jobs > 1 && !use_multi_processing){
+    stop("incompatible parameters: use_multi_processing is false, and num_jobs != 1")
+  }
   #######################################
   # Check Input for Errors
   #######################################
