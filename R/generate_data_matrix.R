@@ -8,7 +8,7 @@ generate_data_matrix <- function(
   nSim=250,seed=1,nBoot=400){
   
   data_matrix = list()
-  
+  matC = vector(mode="numeric")
   for(si in 1:nSim){ #loop through all simulations
     set.seed(seed+(si-1)) #set the seed to ensure reproducibility
     
@@ -124,7 +124,11 @@ generate_data_matrix <- function(
     #######################################
     
     matA<-cbind(A,M,Y,CC,U)
-    matC<-round(cor(matA),digits=2)
+    if(length(matC) > 0){
+      matC <- matC + cor(matA)
+    } else {
+      matC <- cor(matA)
+    }
     colnames(matC)<-c("A","M","Y",paste("C",c(1:length(Ctype)),sep=""),paste("U",c(1:length(Utype)),sep=""))
     rownames(matC)<-c("A","M","Y",paste("C",c(1:length(Ctype)),sep=""),paste("U",c(1:length(Utype)),sep=""))
     
@@ -145,7 +149,7 @@ generate_data_matrix <- function(
     
   } #end of simulation loop
   return(list(
-    matC=matC,
+    matC=(round((matC / nSim), digits=2)),
     data=data_matrix
   ))
 }
