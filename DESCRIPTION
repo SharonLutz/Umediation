@@ -9,4 +9,5 @@ Description: The Umediation package runs the Umediation function which examines 
 License: GPL-2
 Imports: 
     car,
-    mediation
+    mediation,
+    pbapply
