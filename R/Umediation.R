@@ -30,7 +30,7 @@ Umediation<-function(
   #######################################
   # Create Input Data Matrix
   #######################################
-  cat("generating data matrix\n")
+  # cat("generating data matrix\n")
   data_matrix_gen = generate_data_matrix(
     n=n, interact=interact,
     Atype=Atype,Mtype=Mtype,Ytype=Ytype,Ctype=Ctype,Utype=Utype,
@@ -44,7 +44,7 @@ Umediation<-function(
   #######################################
   # Run the mediation and collect the results
   #######################################
-  cat("Running Simulation\n")
+  # cat("Running Simulation\n")
   if(use_multi_processing){
     options(mediate.jobs = num_jobs)
     if(parallel::detectCores() == 1){
@@ -69,16 +69,16 @@ Umediation<-function(
   #######################################
   # Loop through the mediation result matrix
   #######################################
-  cat("Processing Results\n")
+  # cat("Processing Results\n")
   for(si in 1:nSim){ #loop through all simulations
     
     # TODO access the med.out/ med.outU values for this simulation
     result_element = result.matrix[[si]]
+    print(paste(is.null(result_element)))
+    print(names(result_element))
     
-    print(paste(is.null(result_element),names(result_element)))
-    
-    med.out = result_element$med.out
-    med.outU = result_element$med.outU
+    med.out = result_element[["med.out"]]
+    med.outU = result_element[["med.outU"]]
     
     #Results
     Results["Average ACME excluding U",1]<-Results["Average ACME excluding U",1]+summary(med.out)$d.avg
