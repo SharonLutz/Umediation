@@ -34,7 +34,7 @@ Umediation<-function(
   data_matrix_gen = generate_data_matrix(
     n=n, interact=interact,
     Atype=Atype,Mtype=Mtype,Ytype=Ytype,Ctype=Ctype,Utype=Utype,
-    muC=muC,muU=muU,VarA=VarA,varM=varM,varY=varY,varC=varC,varU=varU,
+    muC=muC,muU=muU,varA=varA,varM=varM,varY=varY,varC=varC,varU=varU,
     alpha0=alpha0,alphaA=alphaA,alphaC=alphaC,alphaU=alphaU,
     beta0=beta0,betaA=betaA,betaM=betaM,betaI=betaI,betaC=betaC,betaU=betaU,
     gamma0=gamma0,gammaC=gammaC,gammaU=gammaU,
