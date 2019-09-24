@@ -2,9 +2,9 @@ generate_data_matrix <- function(
   n=100,interact=FALSE,
   Atype="D",Mtype="C",Ytype="C",Ctype="C",Utype="C",
   muC=0,muU=0,varA=1,varM=1,varY=1,varC=1,varU=1,
-  gamma0=0,gammaC=0,gammaU=0,
   alpha0=0,alphaA=0,alphaC=0,alphaU=0,
   beta0=0,betaA=0,betaM=0,betaI=0,betaC=0,betaU=0,
+  gamma0=0,gammaC=0,gammaU=0,
   nSim=250,seed=1,nBoot=400){
   
   data_matrix = list()
