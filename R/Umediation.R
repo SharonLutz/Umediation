@@ -16,6 +16,8 @@ Umediation<-function(n=100,Atype="D",Mtype="C",Ytype="C",Ctype="C",Utype="C",int
         Results<-matrix(0,nrow=12,ncol=1)
         rownames(Results)<-c("Prop. of simulations w/ significant ACME excluding U","Prop. of simulations w/ significant ACME including U","Prop. of simulations where conclusions based on ACME match","Average ACME excluding U","Average ACME including U","Average absolute difference of ACME including U minus ACME excluding U","Prop. of simulations w/ significant ADE excluding U","Prop. of simulations w/ significant ADE including U","Prop. of simulations where conclusions based on ADE match","Average ADE excluding U","Average ADE including U","Average absolute difference of ADE including U minus ADE excluding U")
         
+    #correlation 
+    corA<-0
     #######################################
     # Loop through all simulations
     #######################################
@@ -135,9 +137,7 @@ Umediation<-function(n=100,Atype="D",Mtype="C",Ytype="C",Ctype="C",Utype="C",int
         #######################################
         
         matA<-cbind(A,M,Y,CC,U)
-        matC<-round(cor(matA),digits=2)
-    colnames(matC)<-c("A","M","Y",paste("C",c(1:length(Ctype)),sep=""),paste("U",c(1:length(Utype)),sep=""))
-    rownames(matC)<-c("A","M","Y",paste("C",c(1:length(Ctype)),sep=""),paste("U",c(1:length(Utype)),sep=""))
+        corA<-corA+cor(matA)
                
         #######################################
         # Mediation analysis w/ and w/out U
@@ -192,6 +192,9 @@ Umediation<-function(n=100,Atype="D",Mtype="C",Ytype="C",Ctype="C",Utype="C",int
     #######################################
     # Results
     #######################################
+    matC<-round(corA/nSim,digits=2)
+    colnames(matC)<-c("A","M","Y",paste("C",c(1:length(Ctype)),sep=""),paste("U",c(1:length(Utype)),sep=""))
+    rownames(matC)<-c("A","M","Y",paste("C",c(1:length(Ctype)),sep=""),paste("U",c(1:length(Utype)),sep=""))
     
     matR<-Results/nSim
     listA<-list(matR,matC,paste("Warning: correlations are only valid if at least one of the variables is normally distributed."))
