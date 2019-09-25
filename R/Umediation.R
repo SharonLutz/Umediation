@@ -22,7 +22,7 @@ Umediation<-function(n=100,Atype="D",Mtype="C",Ytype="C",Ctype="C",Utype="C",
         rownames(Results)<-c("Prop. of simulations w/ significant ACME excluding U","Prop. of simulations w/ significant ACME including U","Prop. of simulations where conclusions based on ACME match","Average ACME excluding U","Average ACME including U","Average absolute difference of ACME including U minus ACME excluding U","Prop. of simulations w/ significant ADE excluding U","Prop. of simulations w/ significant ADE including U","Prop. of simulations where conclusions based on ADE match","Average ADE excluding U","Average ADE including U","Average absolute difference of ADE including U minus ADE excluding U")
         
     #correlation 
-    corA<-matrix(0,nrow=(3+ncol(U)+ncol(CC)),ncol=(3+ncol(U)+ncol(CC)))
+    corA<-matrix(0,nrow=(3+length(Ctype)+length(Utype)),ncol=(3+length(Ctype)+length(Utype)))
     
     set.seed(seed)
     #######################################
