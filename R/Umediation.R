@@ -145,7 +145,7 @@ Umediation<-function(n=100,Atype="D",Mtype="C",Ytype="C",Ctype="C",Utype="C",
         
         matA<-cbind(A,M,Y,CC,U)
         corA<-corA+cor(matA)
-      print(cor(matA))
+      #print(cor(matA))
                
         #######################################
         # Mediation analysis w/ and w/out U
