@@ -1,0 +1,9 @@
+Package: Umediation
+Type: Package
+Title: Runs the Umediation Function 
+Version: 1.0
+Date: 2017-02-20
+Author: Sharon Lutz, Annie Thwing
+Maintainer: Annie Thwing <annie.thwing@ucdenver.edu>
+Description: The Umediation package runs the Umediation function which examines the role 	of unmeasured confounding on the estimates for the average causal mediated effect 	(ACME) and average direct effect (ADE) in mediation analysis. 
+License: GPL-2
