@@ -1,5 +1,10 @@
 
-Umediation<-function(n=100,Atype="D",Mtype="C",Ytype="C",Ctype="C",Utype="C",interact=FALSE,muC=0,varC=1,muU=0,varU=1,gamma0=0,gammaC=0,gammaU=0,varA=1,alpha0=0,alphaA=0,alphaC=0,alphaU=0,varM=1,beta0=0,betaA=0,betaM=0,betaI=0,betaC=0,betaU=0,varY=1,alpha=0.05,nSim=250,nBoot=400,seed=1,atreat=1,acontrol=0){
+Umediation<-function(n=100,Atype="D",Mtype="C",Ytype="C",Ctype="C",Utype="C",
+                     interact=FALSE,muC=0,varC=1,muU=0,varU=1,
+                     gamma0=0,gammaC=0,gammaU=0,varA=1,
+                     alpha0=0,alphaA=0,alphaC=0,alphaU=0,varM=1,
+                     beta0=0,betaA=0,betaM=0,betaI=0,betaC=0,betaU=0,varY=1,
+                     alpha=0.05,nSim=250,nBoot=400,seed=1,atreat=1,acontrol=0){
     
     library(mediation) #load the mediation library
     library(car) #load the car library
@@ -17,15 +22,17 @@ Umediation<-function(n=100,Atype="D",Mtype="C",Ytype="C",Ctype="C",Utype="C",int
         rownames(Results)<-c("Prop. of simulations w/ significant ACME excluding U","Prop. of simulations w/ significant ACME including U","Prop. of simulations where conclusions based on ACME match","Average ACME excluding U","Average ACME including U","Average absolute difference of ACME including U minus ACME excluding U","Prop. of simulations w/ significant ADE excluding U","Prop. of simulations w/ significant ADE including U","Prop. of simulations where conclusions based on ADE match","Average ADE excluding U","Average ADE including U","Average absolute difference of ADE including U minus ADE excluding U")
         
     #correlation 
-    corA<-0
+    corA<-matrix(0,nrow=(3+ncol(U)+ncol(CC)),ncol=(3+ncol(U)+ncol(CC)))
+    
+    set.seed(seed)
     #######################################
     # Loop through all simulations
     #######################################
     
     for(si in 1:nSim){ #loop through all simulations
-        set.seed(seed+(si-1)) #set the seed to ensure reproducibility
+        #set.seed(seed+(si-1)) #set the seed to ensure reproducibility
         
-        simStep<-1
+        simStep<-5
         if(floor(si/simStep)==ceiling(si/simStep)){print(paste("simulation",si, "of",nSim))}
         
         #######################################
