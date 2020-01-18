@@ -67,4 +67,3 @@ $Warning
 There is another version of this package which implements support for threading and a version of the mediation algorithm implemented using RcppEigen which can provide a significant boost in speed akin to multiprocessing but with less of a memory footprint.
 
 Find it here [UmediationThread](https://github.com/SharonLutz/UmediationThread)
-
