@@ -1,6 +1,7 @@
 ## Umediation
 The Umediation R package enables the user to simulate unmeasured confounding in mediation analysis in order to see how the results of the mediation analysis would change in the presence of unmeasured confounding.
 
+
 ## Installation
 ```
 install.packages("devtools") #The devtools package must be installed first
