@@ -8,6 +8,7 @@ install.packages("devtools") #The devtools package must be installed first
 install.packages("mediation") #The mediation package must be installed first
 install.packages("car") #The car package must be installed first
 
+
 devtools::install_github("SharonLutz/Umediation")
 ```
 ## Example
